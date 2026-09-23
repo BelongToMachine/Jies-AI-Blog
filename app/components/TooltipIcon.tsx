@@ -26,12 +26,14 @@ const TooltipIcon = () => {
             sideOffset={5}
           >
             <Text as="p" className="text-foreground">
-              {isZh ? "在这里，您每天仅可发送一次邮箱" : "You can send one email per day here."}
+              {isZh
+                ? "在这里，您每天最多可发送 3 封邮件"
+                : "You can send up to 3 emails per day here."}
             </Text>
             <Text as="p" className="pt-2 text-foreground">
               {isZh
-                ? "想立即与我取得联系，请使用 LinkedIn"
-                : "For an immediate response, please use LinkedIn."}
+                ? "达到上限后，可以通过 jie.craft@outlook.com 直接联系"
+                : "After reaching the limit, contact Jie directly at jie.craft@outlook.com."}
             </Text>
             <Tooltip.Arrow className="fill-card" />
           </Tooltip.Content>

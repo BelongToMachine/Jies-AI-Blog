@@ -415,6 +415,7 @@
     "bodyRequired": "请输入邮件正文。",
     "emailContentRequired": "请先填写邮件主题和正文。",
     "rateLimitError": "请求次数已达到临时上限，请等待几分钟后再试。",
+    "sendRateLimitError": "发送邮件次数已达到上限，可以通过 jie.craft@outlook.com 直接联系。",
     "serviceUnavailableError": "邮件服务暂时不可用，请稍后再试。",
     "emailRequired": "请输入你的邮箱地址，以便 Jie 回复你。"
   },

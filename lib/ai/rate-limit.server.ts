@@ -76,10 +76,18 @@ const WEIGHTED_LIMIT_MAX_CREDITS = 30
 
 const CONTACT_RATE_LIMITS: Record<
   ContactRateLimitKind,
-  { requests: number; window: "10 m" }
+  { requests: number; window: "10 m" | "1 d"; windowMs: number }
 > = {
-  "generate-email": { requests: 5, window: "10 m" },
-  "send-email": { requests: 3, window: "10 m" },
+  "generate-email": {
+    requests: 5,
+    window: "10 m",
+    windowMs: 10 * 60 * 1000,
+  },
+  "send-email": {
+    requests: 3,
+    window: "1 d",
+    windowMs: 24 * 60 * 60 * 1000,
+  },
 }
 
 function getIpRatelimit(): Ratelimit {
@@ -125,16 +133,17 @@ function checkLocalContactRateLimit(
   const config = CONTACT_RATE_LIMITS[kind]
   const key = `contact:${kind}:${getIp(req)}`
   const entry = localContactRateMap.get(key)
+  const resetAt = now + config.windowMs
 
   if (!entry || now >= entry.resetAt) {
     localContactRateMap.set(key, {
       count: 1,
-      resetAt: now + 10 * 60 * 1000,
+      resetAt,
     })
     return {
       allowed: true,
       remaining: config.requests - 1,
-      resetAt: now + 10 * 60 * 1000,
+      resetAt,
     }
   }
 

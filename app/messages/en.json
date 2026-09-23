@@ -415,6 +415,7 @@
     "bodyRequired": "Please enter the email message.",
     "emailContentRequired": "Please complete the email subject and body.",
     "rateLimitError": "You've reached the temporary request limit. Please wait a few minutes and try again.",
+    "sendRateLimitError": "You've reached the email limit. You can contact Jie directly at jie.craft@outlook.com.",
     "serviceUnavailableError": "The email service is temporarily unavailable. Please try again later.",
     "emailRequired": "Please enter your email address so Jie can reply."
   },

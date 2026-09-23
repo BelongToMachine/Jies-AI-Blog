@@ -137,7 +137,7 @@ export default function Footer() {
                 </NextLink>
               ))}
               <NextLink
-                href="mailto:lionliao1658@gmail.com"
+                href="mailto:jie.craft@outlook.com"
                 className="group flex items-center gap-3 border-b border-border/60 pb-3 transition-colors duration-200 hover:border-primary/40"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center border-2 border-border/80 bg-background/60 text-muted-foreground transition-colors duration-200 group-hover:border-primary/50 group-hover:text-primary">
@@ -148,7 +148,7 @@ export default function Footer() {
                     Email
                   </span>
                 <span className="font-pixel mt-1 block break-all text-sm text-muted-foreground sm:break-normal sm:text-base">
-                  lionliao1658@gmail.com
+                  jie.craft@outlook.com
                 </span>
                 </span>
               </NextLink>

@@ -209,7 +209,7 @@ export default function ContactForm() {
 
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
-        if (res.status === 429) throw new Error(t("rateLimitError"))
+        if (res.status === 429) throw new Error(t("sendRateLimitError"))
         if (res.status >= 500) throw new Error(t("serviceUnavailableError"))
         throw new Error(
           typeof data.error === "string" ? data.error : t("emailError"),

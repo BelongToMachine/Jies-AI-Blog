@@ -68,7 +68,7 @@ function rateLimitResponse(
     {
       error: result.unavailable
         ? "Email service is temporarily unavailable. Please try again later."
-        : "Too many email requests. Please wait a few minutes.",
+        : "You've reached the email limit. You can contact Jie directly at jie.craft@outlook.com.",
     },
     {
       status: result.unavailable ? 503 : 429,
